@@ -3,348 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZEST Pure Sip</title>
+    <title>ZEST Pure Sip - Pure Water. Pure Life.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for clean iconography -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body {
-            background-color: #f7fbe2;
-            color: #333333;
-            line-height: 1.6;
-        }
-
-        /* 1. Fixed Header Navigation Bar */
-        header {
-            background: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-        }
-        .header-logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .brand-title-nav {
-            font-weight: 800;
-            color: #0c2340;
-            font-size: 20px;
-            letter-spacing: -0.5px;
-        }
-        .brand-title-nav span {
-            color: #00b3e6;
-        }
-        .menu-toggle-btn {
-            font-size: 24px;
-            color: #0066cc;
-            cursor: pointer;
-        }
-
-        /* Section Layout Wrappers */
-        .section-wrapper {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .text-center {
-            text-align: center;
-        }
-
-        /* 2. Hero Presentation Section */
-        .hero-banner {
-            background: linear-gradient(180deg, #e6f4fd 0%, #ffffff 100%);
-            padding-top: 100px;
-            padding-bottom: 60px;
-            text-align: center;
-        }
-        .hero-banner h2 {
-            font-size: 14px;
-            color: #00b3e6;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        .hero-banner h1 {
-            font-size: 2.2rem;
-            color: #0c2340;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-        .hero-banner h1 span {
-            color: #0066cc;
-            display: block;
-        }
-        .hero-banner p {
-            font-size: 1rem;
-            color: #556677;
-            max-width: 600px;
-            margin: 0 auto 25px auto;
-        }
-        .hero-image-box img {
-            max-width: 260px;
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-
-        /* 3. Water Mineral Composition Grid */
-        .composition-section {
-            background-color: #ffffff;
-        }
-        .section-heading-main {
-            font-size: 1.8rem;
-            color: #0c2340;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        .section-heading-main span {
-            color: #00b3e6;
-        }
-        .mineral-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .mineral-card {
-            background: #ffffff;
-            border: 1px solid #eef5fa;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,102,204,0.03);
-            text-align: center;
-        }
-        .mineral-card h4 {
-            color: #0c2340;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        .mineral-value {
-            font-size: 1.4rem;
-            color: #00b3e6;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .mineral-desc {
-            font-size: 0.85rem;
-            color: #778899;
-        }
-
-        /* 4. Brand Mission Profile Section */
-        .story-section {
-            background: #f4fafb;
-        }
-        .badge-purity {
-            background: #00b3e6;
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        /* 5. Product Gallery Grid */
-        .products-showcase-section {
-            background: #ffffff;
-        }
-        .product-display-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        .product-item-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-            border: 1px solid #f0f4f8;
-            position: relative;
-        }
-        .sale-tag-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #ff4d4d;
-            color: white;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-        .product-item-card img {
-            height: 150px;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-        .product-item-card h4 {
-            font-size: 1.15rem;
-            color: #0c2340;
-            margin-bottom: 5px;
-        }
-        .stars-ranking {
-            color: #ffcc00;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .whatsapp-order-btn {
-            background: #25D366;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(37,211,102,0.3);
-            width: 100%;
-        }
-
-        /* 6. Footer Layout */
-        footer {
-            background: #0c2340;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-[#F4F9FD] text-slate-800 antialiased">
 
-    <!-- 1. Header Navigation Bar -->
-    <header>
-        <div class="header-logo-container">
-            <span class="brand-title-nav">ZEST <span>Pure Sip</span></span>
-        </div>
-        <div class="menu-toggle-btn">&#9776;</div>
-    </header>
-
-    <!-- 2. Hero Section -->
-    <section class="hero-banner">
-        <div class="section-wrapper">
-            <h2>Taste Purity, Feel Zest</h2>
-            <h1>ANYWHERE <span>ANYTIME</span></h1>
-            <p>Welcome to ZEST Pure Sip, your trusted source of pure and refreshing drinking water in Islamabad. We provide top quality drinking water in all sizes, delivered directly to you.</p>
-            <div class="hero-image-box">
-                <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=400" alt="ZEST Pure Sip">
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Water Composition Grid -->
-    <section class="composition-section">
-        <div class="section-wrapper">
-            <div class="text-center">
-                <h3 class="section-heading-main">WATER <span>COMPOSITION</span></h3>
-                <p>Our water is purified utilizing multi-step Reverse Osmosis (RO) filtration systems and enriched safely with premium essential minerals for your ultimate health.</p>
+    <!-- 1. HEADER / NAVIGATION -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-blue-50/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex flex-col">
+                <span class="text-2xl font-extrabold tracking-wider text-[#0B2545] leading-none">ZEST</span>
+                <span class="text-[10px] tracking-[0.2em] font-bold text-[#134074]">PURE SIP</span>
             </div>
             
-            <div class="mineral-grid">
-                <div class="mineral-card">
-                    <h4>Calcium Ca²⁺</h4>
-                    <div class="mineral-value">48 mg/L</div>
-                    <p class="mineral-desc">Helps build strong bones and teeth. Ideal range: 30-70 mg/L</p>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#" class="text-[#1D4ED8] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-0.5 after:bg-[#1D4ED8]">Home</a>
+                <a href="#" class="hover:text-[#1D4ED8] transition">About Us</a>
+                <a href="#" class="hover:text-[#1D4ED8] transition">Our Products</a>
+                <a href="#" class="hover:text-[#1D4ED8] transition">Why ZEST</a>
+                <a href="#" class="hover:text-[#1D4ED8] transition">Sustainability</a>
+                <a href="#" class="hover:text-[#1D4ED8] transition">Contact Us</a>
+            </nav>
+
+            <!-- Action Icons -->
+            <div class="flex items-center space-x-6 text-slate-700">
+                <a href="#" class="hover:text-[#1D4ED8] transition"><i data-lucide="user" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-[#1D4ED8] transition relative">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span class="absolute -top-2 -right-2 bg-[#1D4ED8] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-blue-50 to-[#F4F9FD]">
+        <!-- Background Imagery styling to mimic the mountain scenery layout -->
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute bottom-0 right-0 left-0 h-48 bg-gradient-to-t from-[#F4F9FD] to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 items-center relative z-10 py-12">
+            <!-- Hero Content -->
+            <div class="max-w-xl">
+                <span class="text-xs font-extrabold tracking-widest text-[#1D4ED8] uppercase block mb-3">Pure Water. Pure Life.</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-[#0B2545] tracking-tight mb-6 leading-tight">
+                    ZEST <span class="text-[#1D4ED8]">Pure Sip</span>
+                </h1>
+                <div class="w-12 h-1 bg-[#1D4ED8] mb-6"></div>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    Naturally pure. Perfectly balanced. Every sip, a step towards a healthier you.
+                </p>
+                <button class="bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-semibold px-8 py-3.5 rounded-md shadow-lg shadow-blue-500/20 transition inline-flex items-center space-x-2 text-sm group">
+                    <span>EXPLORE PRODUCTS</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition"></i>
+                </button>
+            </div>
+            
+            <!-- Hero Product Mockup Placeholder -->
+            <div class="hidden md:flex justify-center relative">
+                <!-- Using a clean water bottle mockup representation from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80" alt="ZEST Pure Sip Premium Bottle" class="h-[550px] w-auto object-contain drop-shadow-2xl rounded-2xl transform rotate-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. VALUE PROPOSITION BAR -->
+    <section class="max-w-7xl mx-auto px-6 -mt-12 relative z-20 mb-24">
+        <div class="bg-white rounded-xl shadow-xl shadow-blue-900/5 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8 border border-blue-50">
+            <!-- Feature 1 -->
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-blue-50 rounded-lg text-[#1D4ED8]">
+                    <i data-lucide="droplet" class="w-6 h-6"></i>
                 </div>
-                <div class="mineral-card">
-                    <h4>Chloride Cl⁻</h4>
-                    <div class="mineral-value">52 mg/L</div>
-                    <p class="mineral-desc">Helps maintain healthy pH balance. Ideal range: 20-70 mg/L</p>
+                <div>
+                    <h4 class="font-bold text-sm text-[#0B2545] tracking-wide uppercase">100% Pure</h4>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">Sourced from natural springs for purity</p>
                 </div>
-                <div class="mineral-card">
-                    <h4>Sodium Na⁺</h4>
-                    <div class="mineral-value">12 mg/L</div>
-                    <p class="mineral-desc">Supports natural muscle and nerve function. Ideal range: 5-20 mg/L</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-blue-50 rounded-lg text-[#1D4ED8]">
+                    <i data-lucide="shield" class="w-6 h-6"></i>
                 </div>
-                <div class="mineral-card">
-                    <h4>Sulfate SO₄²⁻</h4>
-                    <div class="mineral-value">45 mg/L</div>
-                    <p class="mineral-desc">Supports clean digestion and active metabolism. Ideal range: 10-60 mg/L</p>
+                <div>
+                    <h4 class="font-bold text-sm text-[#0B2545] tracking-wide uppercase">Added Minerals</h4>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">Enriched with essential minerals for your well-being</p>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-blue-50 rounded-lg text-[#1D4ED8]">
+                    <i data-lucide="git-branch" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-[#0B2545] tracking-wide uppercase">Balanced pH</h4>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">Perfectly balanced pH for everyday hydration</p>
+                </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-blue-50 rounded-lg text-[#1D4ED8]">
+                    <i data-lucide="leaf" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-[#0B2545] tracking-wide uppercase">Eco Friendly</h4>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">Sustainable practices for a better tomorrow</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Brand Profile Section -->
-    <section class="story-section">
-        <div class="section-wrapper text-center">
-            <span class="badge-purity">Our Mission</span>
-            <h3 class="section-heading-main">Pure Drinking Water Solutions</h3>
-            <p style="max-width: 750px; margin: 0 auto;">ZEST Pure Sip delivers refreshing, high-standard mineralized hydration solutions across Islamabad. Built with a passion for hygiene and rigorous quality control parameters, we make premium water delivery completely accessible.</p>
-        </div>
-    </section>
-
-    <!-- 5. Product Grid Showcase -->
-    <section class="products-showcase-section">
-        <div class="section-wrapper">
-            <div class="text-center">
-                <h3 class="section-heading-main">CHOOSE YOUR <span>WATER</span></h3>
-                <p>Delivery parameters depend directly on your location distance and order quantity.</p>
+    <!-- 4. PRODUCTS SLIDER SECTION -->
+    <section class="max-w-7xl mx-auto px-6 mb-28 relative">
+        <div class="grid lg:grid-cols-3 gap-12 items-center">
+            <!-- Left Text Content -->
+            <div>
+                <span class="text-xs font-extrabold tracking-widest text-[#1D4ED8] uppercase block mb-2">Our Products</span>
+                <h2 class="text-4xl font-extrabold text-[#0B2545] leading-tight mb-4">Hydration for Every Lifestyle</h2>
+                <div class="w-10 h-0.5 bg-[#1D4ED8] mb-6"></div>
+                <p class="text-slate-600 mb-8 leading-relaxed">From on-the-go to on-the-table, choose the perfect size for your needs.</p>
+                <button class="border border-[#1D4ED8] text-[#1D4ED8] hover:bg-blue-50 font-semibold px-6 py-3 rounded-md transition inline-flex items-center space-x-2 text-sm group">
+                    <span>VIEW ALL PRODUCTS</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition"></i>
+                </button>
             </div>
-
-            <div class="product-display-grid">
-                <!-- Product Card: 500ml -->
-                <div class="product-item-card">
-                    <span class="sale-tag-badge">Sale</span>
-                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="500ml Bottle">
-                    <h4>500ml Bottle Case</h4>
-                    <div class="stars-ranking">★★★★★</div>
-                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%20500ml%20Case" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
+            
+            <!-- Right Product Lineup -->
+            <div class="lg:col-span-2 relative flex items-end justify-between space-x-4 overflow-x-auto pb-4 scrollbar-none">
+                <!-- 250ml -->
+                <div class="flex flex-col items-center min-w-[120px] flex-1">
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=300&q=80" alt="250ml" class="h-40 object-contain mb-4 rounded-lg mix-blend-multiply">
+                    <span class="text-sm font-bold text-slate-700">250ml</span>
+                </div>
+                <!-- 500ml -->
+                <div class="flex flex-col items-center min-w-[120px] flex-1">
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=300&q=80" alt="500ml" class="h-52 object-contain mb-4 rounded-lg mix-blend-multiply">
+                    <span class="text-sm font-bold text-slate-700">500ml</span>
+                </div>
+                <!-- 1L -->
+                <div class="flex flex-col items-center min-w-[120px] flex-1">
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=300&q=80" alt="1L" class="h-64 object-contain mb-4 rounded-lg mix-blend-multiply">
+                    <span class="text-sm font-bold text-slate-700">1L</span>
+                </div>
+                <!-- 2L -->
+                <div class="flex flex-col items-center min-w-[120px] flex-1">
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=300&q=80" alt="2L" class="h-72 object-contain mb-4 rounded-lg mix-blend-multiply">
+                    <span class="text-sm font-bold text-slate-700">2L</span>
                 </div>
 
-                <!-- Product Card: 1.5L -->
-                <div class="product-item-card">
-                    <span class="sale-tag-badge">Sale</span>
-                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="1.5L Bottle">
-                    <h4>1.5L Bottle Case</h4>
-                    <div class="stars-ranking">★★★★★</div>
-                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%201.5L%20Case" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
-                </div>
-
-                <!-- Product Card: 12L -->
-                <div class="product-item-card">
-                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="12L Bottle">
-                    <h4>12L Nest Bottle</h4>
-                    <div class="stars-ranking">★★★★★</div>
-                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%2012L%20Bottle" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
-                </div>
-
-                <!-- Product Card: 19L -->
-                <div class="product-item-card">
-                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="19L Bottle">
-                    <h4>19L Premium Gallon</h4>
-                    <div class="stars-ranking">★★★★★</div>
-                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%2019L%20Gallon" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
-                </div>
+                <!-- Next Slider Control Button -->
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-slate-100 shadow-md hover:shadow-lg rounded-full p-3 text-slate-700 z-10 transition">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- 6. Footer Layout -->
-    <footer>
-        <p>Islamabad, Pakistan</p>
-        <p style="margin-top: 10px; font-size: 11px;">&copy; 2026 ZEST Pure Sip. All Rights Reserved.</p>
+    <!-- 5. ABOUT US / STORY SECTION -->
+    <section class="max-w-7xl mx-auto px-6 mb-28">
+        <div class="bg-white rounded-2xl shadow-xl shadow-blue-900/5 overflow-hidden grid md:grid-cols-5 items-stretch border border-blue-50">
+            <!-- Waterfall Image Block -->
+            <div class="md:col-span-2 relative min-h-[300px]">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Natural Spring Source" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            
+            <!-- Description & Stats Block -->
+            <div class="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+                <span class="text-xs font-extrabold tracking-widest text-[#1D4ED8] uppercase block mb-2">About Zest Pure Sip</span>
+                <h3 class="text-3xl font-extrabold text-[#0B2545] mb-4">Born Pure. Made for You.</h3>
+                <div class="w-10 h-0.5 bg-[#1D4ED8] mb-6"></div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                    ZEST Pure Sip is committed to delivering 100% pure and safe drinking water. Our advanced purification process ensures every drop is clean, refreshing and full of life.
+                </p>
+                
+                <!-- Bottom Mini Stats Row -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="droplet" class="w-5 h-5 text-[#1D4ED8] shrink-0"></i>
+                        <div>
+                            <p class="text-xs font-extrabold text-[#0B2545]">100%</p>
+                            <p class="text-[10px] text-slate-500">Pure & Safe</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="heart" class="w-5 h-5 text-[#1D4ED8] shrink-0"></i>
+                        <div>
+                            <p class="text-xs font-extrabold text-[#0B2545]">Millions</p>
+                            <p class="text-[10px] text-slate-500">Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="globe" class="w-5 h-5 text-[#1D4ED8] shrink-0"></i>
+                        <div>
+                            <p class="text-xs font-extrabold text-[#0B2545]">Sustainable</p>
+                            <p class="text-[10px] text-slate-500">For a Better Tomorrow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+            <!-- Brand Column -->
+            <div class="lg:col-span-2">
+                <div class="flex flex-col mb-4">
+                    <span class="text-2xl font-extrabold tracking-wider text-[#0B2545] leading-none">ZEST</span>
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-[#134074]">PURE SIP</span>
+                </div>
+                <p class="text-xs text-slate-500 max-w-xs leading-relaxed mb-6">
+                    Pure water for a healthy life. Every sip, a promise.
+                </p>
+                <!-- Social Icons -->
+                <div class="flex space-x-4 text-slate-400">
+                    <a href="#" class="hover:text-[#1D4ED8] transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1D4ED8] transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1D4ED8] transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1D4ED8] transition"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+            
+            <!-- Company Links -->
+            <div>
+                <h5 class="text-xs font-bold text-[#0B2545] uppercase tracking-wider mb-4">Company</h5>
+                <ul class="space-y-2 text-xs text-slate-500 font-medium">
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Our Journey</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">News & Media</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Links -->
+            <div>
+                <h5 class="text-xs font-bold text-[#0B2545] uppercase tracking-wider mb-4">Help</h5>
+                <ul class="space-y-2 text-xs text-slate-500 font-medium">
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">FAQs</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Shipping & Delivery</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Returns & Refunds</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies Links / Stay Connected -->
+            <div>
+                <h5 class="text-xs font-bold text-[#0B2545] uppercase tracking-wider mb-4">Policies</h5>
+                <ul class="space-y-2 text-xs text-slate-500 font-medium mb-6">
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-[#1D4ED8] transition">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Newsletter Subscription Form Block styled identically to the inline bottom placement -->
+        <div class="max-w-7xl mx-auto px-6 border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+            <div class="w-full sm:w-auto">
+                <h5 class="text-xs font-bold text-[#0B2545] uppercase tracking-wider mb-2">Stay Connected</h5>
+                <p class="text-slate-500 mb-3">Subscribe to get updates on new products, offers and more.</p>
+                <form class="flex max-w-sm border border-slate-200 rounded-md overflow-hidden bg-white">
+                    <input type="email" placeholder="Enter your email" class="px-3 py-2 text-slate-700 placeholder-slate-400 focus:outline-none text-xs flex-1">
+                    <button type="submit" class="bg-[#1D4ED8] text-white px-4 hover:bg-blue-700 transition flex items-center justify-center">
+                        <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="flex flex-col sm:items-end w-full sm:w-auto gap-1">
+                <p>© 2026 ZEST Pure Sip. All Rights Reserved.</p>
+                <p class="flex items-center sm:justify-end gap-1">Made with <i data-lucide="heart" class="w-3 h-3 text-blue-600 fill-blue-600"></i> in India</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
