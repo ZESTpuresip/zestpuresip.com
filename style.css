@@ -1,5 +1,85 @@
+/* Reset and background */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 body {
-    background-color: #f4f9fc;
-    color: #0066cc;
+    background-color: #f0f7fc;
+    color: #2c3e50;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Beautiful website container card */
+.container {
+    background: #ffffff;
+    max-width: 450px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 90, 180, 0.1);
     text-align: center;
+}
+
+/* Typography styles */
+h1 {
+    color: #0066cc;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #00b3e6;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #556677;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #004499;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e1f0fa;
+    padding-bottom: 5px;
+}
+
+/* Clean list style for products */
+ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+li {
+    background: #f4f9fd;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0066cc;
+    border-left: 4px solid #00b3e6;
+}
+
+/* Contact text styling */
+.contact-info {
+    font-style: normal;
+    background: #fdfdfd;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+    font-weight: 500;
 }
