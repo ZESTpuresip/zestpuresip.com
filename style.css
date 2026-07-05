@@ -1,132 +1,49 @@
-/* Base Setup */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEST Pure Sip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: #f4f9fd;
-    color: #2c3e50;
-    padding-top: 70px; /* Leaves room for the header at the top */
-}
+    <!-- Top Navigation Navbar -->
+    <header class="main-header">
+        <div class="menu-icon">&#9776;</div>
+        <div class="logo-text">
+            ZEST<br><small>Pure Sip</small>
+        </div>
+        <div style="width: 24px;"></div> <!-- Layout Balancer -->
+    </header>
 
-/* 1. Clear & Separate Top Navigation Bar */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #ffffff;
-    border-bottom: 2px solid #e1f0fa;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+    <!-- Main Card Container -->
+    <div class="container-fluid">
+        <h2>Taste Purity, Feel Zest</h2>
+        <p>Welcome to ZEST Pure Sip, your trusted source of pure and refreshing drinking water in Islamabad.</p>
+        
+        <h3>Our Products</h3>
+        <ul class="product-list">
+            <li>500ml Bottle</li>
+            <li>1.5L Bottle</li>
+            <li>12L Bottle</li>
+            <li>19L Bottle</li>
+        </ul>
 
-/* The Menu Icon (Three Lines) */
-.menu-icon {
-    font-size: 26px;
-    color: #0066cc;
-    cursor: pointer;
-    font-weight: bold;
-}
+        <!-- WhatsApp Button -->
+        <div style="margin: 25px 0;">
+            <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20ZEST%20Pure%20Sip%20water" 
+               target="_blank" 
+               class="whatsapp-btn">
+               💬 Order via WhatsApp
+            </a>
+        </div>
+        
+        <hr>
+        <h3>Contact</h3>
+        <p>Owner: Shaukat Khan</p>
+        <p>Islamabad, Pakistan</p>
+    </div>
 
-/* Centered Brand Logo */
-.logo-text {
-    text-align: center;
-    font-weight: 800;
-    color: #0066cc;
-    font-size: 20px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.logo-text small {
-    font-size: 11px;
-    color: #00b3e6;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
-/* 2. Main Body Container Card */
-.container-fluid {
-    background: #ffffff;
-    max-width: 450px;
-    margin: 30px auto;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.08);
-    text-align: center;
-}
-
-/* Typography styles */
-h2 {
-    color: #0066cc;
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #657786;
-    margin-bottom: 25px;
-}
-
-h3 {
-    color: #004499;
-    font-size: 1.25rem;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 5px;
-}
-
-/* 3. Product List Items */
-.product-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.product-list li {
-    background: #f8fcff;
-    margin: 10px 0;
-    padding: 14px;
-    border-radius: 12px;
-    color: #0066cc;
-    font-weight: 600;
-    border-left: 5px solid #00b3e6;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.02);
-    text-align: left;
-    padding-left: 20px;
-}
-
-/* 4. Beautiful WhatsApp Button */
-.whatsapp-btn {
-    background-color: #25D366;
-    color: white !important;
-    padding: 14px 35px;
-    text-decoration: none !important;
-    font-weight: bold;
-    border-radius: 30px;
-    display: inline-block;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    font-size: 16px;
-    transition: transform 0.2s ease;
-    margin: 15px 0;
-}
-
-/* Footer Section styling */
-hr {
-    border: 0;
-    height: 1px;
-    background: #e1f0fa;
-    margin: 30px 0;
-}
+</body>
+</html>
