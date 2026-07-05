@@ -5,147 +5,350 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZEST Pure Sip</title>
     <style>
-        /* Modern Design Reset */
+        /* Global Styles & Theme Variables */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: #f0f7fc;
-            color: #2c3e50;
-            padding: 20px 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #f7fbe;
+            color: #333333;
+            line-height: 1.6;
         }
 
-        /* 1. Premium Mobile Card Container */
-        .container {
+        /* 1. Header Styles */
+        header {
             background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 400px;
-            padding: 35px 25px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.08);
+            height: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-logo-text {
+            font-size: 11px;
+            color: #666;
+        }
+        .header-logo-text strong {
+            color: #0066cc;
+        }
+        .brand-title-nav {
+            font-weight: 800;
+            color: #0c2340;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+        .brand-title-nav span {
+            color: #00b3e6;
+        }
+        .menu-toggle-btn {
+            font-size: 24px;
+            color: #0066cc;
+            cursor: pointer;
+        }
+
+        /* Section Container Layouts */
+        .section-wrapper {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .text-center {
             text-align: center;
         }
 
-        /* Brand Title */
-        h1 {
-            color: #0066cc;
-            font-size: 2rem;
-            margin-bottom: 5px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+        /* 2. Hero Section */
+        .hero-banner {
+            background: linear-gradient(180deg, #e6f4fd 0%, #ffffff 100%);
+            padding-top: 100px;
+            padding-bottom: 60px;
+            text-align: center;
         }
-
-        h2 {
+        .hero-banner h2 {
+            font-size: 14px;
             color: #00b3e6;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
-
-        p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #5a6b7c;
-            margin-bottom: 25px;
-        }
-
-        h3 {
-            color: #004499;
-            font-size: 1.2rem;
-            margin-top: 20px;
+        .hero-banner h1 {
+            font-size: 2.2rem;
+            color: #0c2340;
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 15px;
-            font-weight: 600;
         }
-
-        /* 2. Beautiful Product Lists */
-        .product-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 25px;
-        }
-
-        .product-list li {
-            background: #f4fafe;
-            margin: 10px 0;
-            padding: 14px 18px;
-            border-radius: 14px;
+        .hero-banner h1 span {
             color: #0066cc;
-            font-weight: 600;
+            display: block;
+        }
+        .hero-banner p {
             font-size: 1rem;
-            border-left: 5px solid #00b3e6;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.01);
-            text-align: left;
+            color: #556677;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            padding: 0 15px;
+        }
+        .hero-image-box img {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
 
-        /* 3. Perfect WhatsApp Button */
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: #ffffff !important;
-            padding: 14px 30px;
-            text-decoration: none !important;
+        /* 3. Water Composition Grid Section */
+        .composition-section {
+            background-color: #ffffff;
+        }
+        .section-heading-main {
+            font-size: 1.8rem;
+            color: #0c2340;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .section-heading-main span {
+            color: #00b3e6;
+        }
+        .mineral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .mineral-card {
+            background: #ffffff;
+            border: 1px solid #eef5fa;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,102,204,0.03);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .mineral-card h4 {
+            color: #0c2340;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .mineral-value {
+            font-size: 1.4rem;
+            color: #00b3e6;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .mineral-desc {
+            font-size: 0.85rem;
+            color: #778899;
+        }
+
+        /* 4. Our Story Section */
+        .story-section {
+            background: #f4fafb;
+        }
+        .badge-purity {
+            background: #00b3e6;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: bold;
-            border-radius: 30px;
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.35);
-            font-size: 16px;
-            margin: 15px 0;
+            margin-bottom: 15px;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #e6f2fa;
-            margin: 25px 0;
+        /* 5. Products Grid Showcase Section */
+        .products-showcase-section {
+            background: #ffffff;
+        }
+        .product-display-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .product-item-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid #f0f4f8;
+            position: relative;
+        }
+        .sale-tag-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff4d4d;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+        .product-item-card img {
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .product-item-card h4 {
+            font-size: 1.15rem;
+            color: #0c2340;
+            margin-bottom: 5px;
+        }
+        .stars-ranking {
+            color: #ffcc00;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .whatsapp-order-btn {
+            background: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+            width: 100%;
         }
 
-        .contact-info {
-            font-size: 0.95rem;
-            color: #657786;
-            margin-bottom: 6px;
+        /* Footer Info Section */
+        footer {
+            background: #0c2340;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Card Container -->
-    <div class="container">
-        <h1>ZEST Pure Sip</h1>
-        <h2>Taste Purity, Feel Zest</h2>
-        
-        <p>Welcome to ZEST Pure Sip, your trusted source of pure and refreshing drinking water in Islamabad.</p>
-        
-        <h3>Our Products</h3>
-        <ul class="product-list">
-            <li>500ml Bottle</li>
-            <li>1.5L Bottle</li>
-            <li>12L Bottle</li>
-            <li>19L Bottle</li>
-        </ul>
-
-        <!-- WhatsApp Button -->
-        <div>
-            <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20ZEST%20Pure%20Sip%20water" 
-               target="_blank" 
-               class="whatsapp-btn">
-               💬 Order via WhatsApp
-            </a>
+    <!-- 1. Brand Top Header -->
+    <header>
+        <div class="header-logo-container">
+            <span class="brand-title-nav">PURE <span>SIP</span></span>
+            <span class="header-logo-text">| A Product of <strong>ZEST Beverages</strong></span>
         </div>
-        
-        <hr>
-        
-        <h3>Contact</h3>
-        <p class="contact-info"><strong>Owner:</strong> Shaukat Khan</p>
-        <p class="contact-info">Islamabad, Pakistan</p>
-    </div>
+        <div class="menu-toggle-btn">&#9776;</div>
+    </header>
+
+    <!-- 2. Main Hero Banner Display -->
+    <section class="hero-banner">
+        <div class="section-wrapper">
+            <h2>Pure and Refreshing</h2>
+            <h1>ANYWHERE <span>ANYTIME</span></h1>
+            <p>We are live with top quality drinking water in all sizes for our valued hydration partners. To enjoy the healthiest ever water intake for you, we have brought a purest form of water for you and your beloved ones.</p>
+            <div class="hero-image-box">
+                <!-- Premium High-Resolution Floating Glass Placeholder Artwork -->
+                <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=400" alt="Pure Water">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Dynamic Water Composition Blocks -->
+    <section class="composition-section">
+        <div class="section-wrapper">
+            <div class="text-center">
+                <h3 class="section-heading-main">WATER <span>COMPOSITION</span></h3>
+                <p>Water is obtained from deep underground sources, purified with multi-stepped Reverse Osmosis (RO) systems and topped up with essential minerals for healthy intake.</p>
+            </div>
+            
+            <div class="mineral-grid">
+                <div class="mineral-card">
+                    <h4>Calcium Ca²⁺</h4>
+                    <div class="mineral-value">48 mg/L</div>
+                    <p class="mineral-desc">Helps build strong bones and teeth. Ideal range: 30-70 mg/L</p>
+                </div>
+                <div class="mineral-card">
+                    <h4>Chloride Cl⁻</h4>
+                    <div class="mineral-value">52 mg/L</div>
+                    <p class="mineral-desc">Helps maintain pH balance. Ideal range: 20-70 mg/L</p>
+                </div>
+                <div class="mineral-card">
+                    <h4>Sodium Na⁺</h4>
+                    <div class="mineral-value">12 mg/L</div>
+                    <p class="mineral-desc">Supports muscle and nerve function. Ideal range: 5-20 mg/L</p>
+                </div>
+                <div class="mineral-card">
+                    <h4>Sulfate SO₄²⁻</h4>
+                    <div class="mineral-value">45 mg/L</div>
+                    <p class="mineral-desc">Supports digestion and metabolism. Ideal range: 10-60 mg/L</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Our Story Brand Brief Section -->
+    <section class="story-section">
+        <div class="section-wrapper text-center">
+            <span class="badge-purity">Our Story</span>
+            <h3 class="section-heading-main">The Purest Pakistani Brand</h3>
+            <p style="max-width: 750px; margin: 0 auto;">PureSip was born out of a simple yet powerful idea: to provide access to clean, pure, and refreshing drinking water anywhere, anytime. Initially launched in Twin Cities with the goal of delivering high-quality mineral water straight to your doorstep.</p>
+        </div>
+    </section>
+
+    <!-- 5. Interactive E-Store Product Catalog Container -->
+    <section class="products-showcase-section">
+        <div class="section-wrapper">
+            <div class="text-center">
+                <h3 class="section-heading-main">CHOOSE YOUR <span>WATER</span></h3>
+                <p>Bottle delivery depends on the distance and quantity.</p>
+            </div>
+
+            <div class="product-display-grid">
+                <!-- Product Card: 1.5L -->
+                <div class="product-item-card">
+                    <span class="sale-tag-badge">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="1.5L Bottle">
+                    <h4>1.5L Bottle Case</h4>
+                    <div class="stars-ranking">★★★★★</div>
+                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%201.5L%20Bottle%20Case" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
+                </div>
+
+                <!-- Product Card: 12L -->
+                <div class="product-item-card">
+                    <span class="sale-tag-badge">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="12L Bottle">
+                    <h4>12L Nest Bottle</h4>
+                    <div class="stars-ranking">★★★★★</div>
+                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%2012L%20Bottle" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
+                </div>
+
+                <!-- Product Card: 19L -->
+                <div class="product-item-card">
+                    <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="19L Bottle">
+                    <h4>19L Premium Gallon</h4>
+                    <div class="stars-ranking">★★★★★</div>
+                    <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%2019L%20Gallon" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer Details Layout -->
+    <footer>
+        <p><strong>Owner:</strong> Shaukat Khan | Islamabad, Pakistan</p>
+        <p style="margin-top: 10px; font-size: 11px;">&copy; 2026 ZEST Pure Sip. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
