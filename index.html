@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZEST Pure Sip</title>
     <style>
-        /* Premium Brand Layout Reset */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
@@ -18,7 +18,7 @@
             line-height: 1.6;
         }
 
-        /* 1. Header Navigation Bar */
+        /* 1. Fixed Header Navigation Bar */
         header {
             background: #ffffff;
             display: flex;
@@ -36,7 +36,6 @@
         .header-logo-container {
             display: flex;
             align-items: center;
-            gap: 8px;
         }
         .brand-title-nav {
             font-weight: 800;
@@ -53,7 +52,7 @@
             cursor: pointer;
         }
 
-        /* Section Global Settings */
+        /* Section Layout Wrappers */
         .section-wrapper {
             padding: 60px 20px;
             max-width: 1200px;
@@ -63,7 +62,7 @@
             text-align: center;
         }
 
-        /* 2. ZEST Hero Section */
+        /* 2. Hero Presentation Section */
         .hero-banner {
             background: linear-gradient(180deg, #e6f4fd 0%, #ffffff 100%);
             padding-top: 100px;
@@ -101,7 +100,7 @@
             margin-top: 20px;
         }
 
-        /* 3. Water Quality & Properties Grid */
+        /* 3. Water Mineral Composition Grid */
         .composition-section {
             background-color: #ffffff;
         }
@@ -144,7 +143,7 @@
             color: #778899;
         }
 
-        /* 4. Our Story Section */
+        /* 4. Brand Mission Profile Section */
         .story-section {
             background: #f4fafb;
         }
@@ -159,7 +158,7 @@
             margin-bottom: 15px;
         }
 
-        /* 5. Products E-Store Catalog Grid */
+        /* 5. Product Gallery Grid */
         .products-showcase-section {
             background: #ffffff;
         }
@@ -218,7 +217,7 @@
             width: 100%;
         }
 
-        /* Footer Details */
+        /* 6. Footer Layout */
         footer {
             background: #0c2340;
             color: #ffffff;
@@ -233,7 +232,7 @@
 </head>
 <body>
 
-    <!-- 1. Custom Brand Navigation Header -->
+    <!-- 1. Header Navigation Bar -->
     <header>
         <div class="header-logo-container">
             <span class="brand-title-nav">ZEST <span>Pure Sip</span></span>
@@ -246,19 +245,19 @@
         <div class="section-wrapper">
             <h2>Taste Purity, Feel Zest</h2>
             <h1>ANYWHERE <span>ANYTIME</span></h1>
-            <p>Welcome to ZEST Pure Sip, your trusted source of pure and refreshing drinking water in Islamabad. We provide top quality drinking water in all sizes, brought directly to your doorstep.</p>
+            <p>Welcome to ZEST Pure Sip, your trusted source of pure and refreshing drinking water in Islamabad. We provide top quality drinking water in all sizes, delivered directly to you.</p>
             <div class="hero-image-box">
                 <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=400" alt="ZEST Pure Sip">
             </div>
         </div>
     </section>
 
-    <!-- 3. Mineral Breakdown Grid -->
+    <!-- 3. Water Composition Grid -->
     <section class="composition-section">
         <div class="section-wrapper">
             <div class="text-center">
                 <h3 class="section-heading-main">WATER <span>COMPOSITION</span></h3>
-                <p>Our water is purified utilizing multi-step Reverse Osmosis (RO) filtration systems and enriched safely with premium essential minerals for your ultimate hydration health.</p>
+                <p>Our water is purified utilizing multi-step Reverse Osmosis (RO) filtration systems and enriched safely with premium essential minerals for your ultimate health.</p>
             </div>
             
             <div class="mineral-grid">
@@ -286,7 +285,7 @@
         </div>
     </section>
 
-    <!-- 4. Brand Story Section -->
+    <!-- 4. Brand Profile Section -->
     <section class="story-section">
         <div class="section-wrapper text-center">
             <span class="badge-purity">Our Mission</span>
@@ -295,16 +294,16 @@
         </div>
     </section>
 
-    <!-- 5. E-Store Product Size Grid with Instant WhatsApp Actions -->
+    <!-- 5. Product Grid Showcase -->
     <section class="products-showcase-section">
         <div class="section-wrapper">
             <div class="text-center">
                 <h3 class="section-heading-main">CHOOSE YOUR <span>WATER</span></h3>
-                <p>Bottle delivery depends on your location distance and order quantity.</p>
+                <p>Delivery parameters depend directly on your location distance and order quantity.</p>
             </div>
 
             <div class="product-display-grid">
-                <!-- Bottle Size 1 -->
+                <!-- Product Card: 500ml -->
                 <div class="product-item-card">
                     <span class="sale-tag-badge">Sale</span>
                     <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="500ml Bottle">
@@ -313,7 +312,7 @@
                     <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%20500ml%20Case" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
                 </div>
 
-                <!-- Bottle Size 2 -->
+                <!-- Product Card: 1.5L -->
                 <div class="product-item-card">
                     <span class="sale-tag-badge">Sale</span>
                     <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="1.5L Bottle">
@@ -322,7 +321,7 @@
                     <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%201.5L%20Case" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
                 </div>
 
-                <!-- Bottle Size 3 -->
+                <!-- Product Card: 12L -->
                 <div class="product-item-card">
                     <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="12L Bottle">
                     <h4>12L Nest Bottle</h4>
@@ -330,7 +329,7 @@
                     <a href="https://wa.me/923469355514?text=I%20want%20to%20order%20the%20ZEST%20Pure%20Sip%2012L%20Bottle" target="_blank" class="whatsapp-order-btn">WhatsApp</a>
                 </div>
 
-                <!-- Bottle Size 4 -->
+                <!-- Product Card: 19L -->
                 <div class="product-item-card">
                     <img src="https://images.unsplash.com/photo-1608889174619-41353f82e817?q=80&w=300" alt="19L Bottle">
                     <h4>19L Premium Gallon</h4>
