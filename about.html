@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ZEST Pure Sip</title>
+    <style>
+        /* Base styles matching the homepage theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Header Navigation Styles from 1000290429.jpg */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 4%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo .brand-main {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #0d2c54;
+            letter-spacing: 1px;
+        }
+
+        .logo .brand-sub {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #00a8e8;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        /* Making About Us link active with underline */
+        nav a.active {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            font-weight: 600;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #f0f4f8;
+            color: #0056b3;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #555555;
+            position: relative;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: #0056b3;
+            color: white;
+            font-size: 0.6rem;
+            padding: 1px 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Layout */
+        main {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #f4f8fb 0%, #ffffff 100%);
+            min-height: 80vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            color: #0056b3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #0d2c54;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        p {
+            color: #5a6578;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 40px 0;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: #0d2c54;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #5a6578;
+            line-height: 1.6;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00a8e8;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #eaeaea;
+            color: #888888;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <header>
+        <div class="logo">
+            <span class="brand-main">ZEST</span>
+            <span class="brand-sub">PURE SIP</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="#">Our Products</a>
+            <a href="#">Why ZEST</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="header-right">
+            <div class="location-badge">📍 Islamabad</div>
+            <button class="icon-btn">👤</button>
+            <button class="icon-btn">🛒<span class="cart-badge">0</span></button>
+        </div>
+    </header>
+
+    <!-- 2. ABOUT US CONTENT SECTION -->
+    <main>
+        <div class="container">
+            <div class="tagline">Taste Purity - Feel Zest</div>
+            <h1>Pure Water For Every Drop Of Life</h1>
+            
+            <p>
+                At <strong>ZEST Pure Sip</strong>, we believe that clean, safe, and healthy drinking water shouldn't be a luxury—it is a fundamental right. Our journey began with a simple mission: to deliver the highest standard of hydration to our community. We noticed a growing need for reliable, premium-grade purified water in homes, offices, and businesses across the Twin Cities, and we set out to bridge that gap.
+            </p>
+
+            <p>
+                Utilizing state-of-the-art <strong>Multi-Stage Reverse Osmosis (RO)</strong> technology, we strip away harmful impurities while ensuring the water maintains a perfectly balanced pH and is enriched with essential minerals for your well-being. From our purification facility straight to your doorstep across Islamabad and Rawalpindi, quality control is at the heart of everything we do.
+            </p>
+
+            <hr>
+
+            <h3>Why Choose ZEST?</h3>
+            <ul class="features-list">
+                <li><strong>Advanced RO Purification:</strong> Ultimate purity you can taste and trust.</li>
+                <li><strong>Health First:</strong> Perfectly balanced pH and added minerals to keep you properly hydrated.</li>
+                <li><strong>Twin Cities Delivery:</strong> Prompt, dependable doorstep delivery services across Islamabad & Pindi.</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer>
+        <p>&copy; 2026 ZEST Pure Sip. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
