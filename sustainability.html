@@ -70,11 +70,73 @@
             color: #0056b3;
         }
 
-        /* The underline is now applied to Sustainability */
         nav a.active {
             color: #0056b3;
             border-bottom: 2px solid #0056b3;
             font-weight: 600;
+        }
+
+        /* Sustainability Content Layout */
+        main {
+            padding: 60px 4%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sub-heading {
+            color: #0056b3; 
+            font-weight: 600; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            color: #0d2c54; 
+            font-size: 2.5rem; 
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* Card Grid Layout matching 1000290444.jpg */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon-container {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            color: #0d2c54;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #555555;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -93,10 +155,35 @@
         </nav>
     </header>
 
-    <main style="padding: 50px 4%;">
-        <p style="color: #0056b3; font-weight: 600; letter-spacing: 1px;">OUR COMMITMENT</p>
-        <h1 style="color: #0d2c54; font-size: 2.5rem; margin-top: 10px;">Sustainability Initiatives</h1>
-        <p style="margin-top: 20px; color: #555555;">Your sustainability content and cards will go here...</p>
+    <main>
+        <span class="sub-heading">Our Commitment</span>
+        <h1>Pure Water, Protected Planet</h1>
+
+        <!-- Grid Container -->
+        <div class="card-grid">
+            
+            <!-- Card 1: Eco-Friendly Packaging -->
+            <div class="feature-card">
+                <div class="icon-container">🌱</div>
+                <h3>Eco-Friendly Packaging</h3>
+                <p>We utilize 100% recyclable and responsibly sourced materials for our bottles, minimizing single-use plastic waste and reducing our environmental footprint.</p>
+            </div>
+
+            <!-- Card 2: Water Conservation -->
+            <div class="feature-card">
+                <div class="icon-container">💧</div>
+                <h3>Responsible Sourcing</h3>
+                <p>Our advanced, multi-stage purification system is finely tuned to avoid water waste, ensuring every natural drop is handled with complete ecological care.</p>
+            </div>
+
+            <!-- Card 3: Twin Cities Smart Delivery -->
+            <div class="feature-card">
+                <div class="icon-container">🚚</div>
+                <h3>Green Logistics</h3>
+                <p>By optimizing our localized distribution routes throughout Islamabad and Rawalpindi, we deliberately lower our carbon emissions during daily doorstep deliveries.</p>
+            </div>
+
+        </div>
     </main>
 
 </body>
