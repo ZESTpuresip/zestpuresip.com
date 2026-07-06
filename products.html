@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - ZEST Pure Sip</title>
     <style>
-        /* Modern Reset & Variable Setup */
         * {
             margin: 0;
             padding: 0;
@@ -14,22 +13,20 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f9fcff 0%, #f2f7fc 100%);
+            background: #f4f8fc;
             color: #2d3748;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* Clean, Modern Navigation Bar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(234, 234, 234, 0.6);
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -80,9 +77,8 @@
             font-weight: 600;
         }
 
-        /* Hero Header Custom Styling */
         main {
-            padding: 80px 6% 60px;
+            padding: 60px 6%;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
@@ -91,7 +87,7 @@
 
         .hero-section {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .sub-heading {
@@ -106,7 +102,7 @@
 
         h1 {
             color: #0d2c54; 
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 800; 
             line-height: 1.2;
             margin-bottom: 16px;
@@ -114,61 +110,52 @@
 
         .tagline {
             color: #64748b;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Modern Grid Card Container */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        /* Premium Floating Card Design */
         .product-card {
             background: #ffffff;
-            border-radius: 24px;
+            border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
-            border: 1px solid rgba(240, 244, 248, 0.8);
-            box-shadow: 0 10px 40px rgba(13, 44, 84, 0.03);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #f0f4f8;
+            box-shadow: 0 10px 30px rgba(13, 44, 84, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(13, 44, 84, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 44, 84, 0.06);
         }
 
-        /* Modern Rounded Tinted Icon Box */
         .icon-wrapper {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background: #f0f7ff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 28px;
-            font-size: 2rem;
-            color: #2563eb;
-            transition: background 0.3s ease;
-        }
-
-        .product-card:hover .icon-wrapper {
-            background: #e0f0ff;
+            margin-bottom: 24px;
+            font-size: 1.8rem;
         }
 
         .product-card h3 {
             color: #0d2c54;
-            font-size: 1.4rem;
-            margin-bottom: 14px;
+            font-size: 1.35rem;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
@@ -176,39 +163,35 @@
             color: #64748b;
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
             flex-grow: 1;
         }
 
-        /* Modernized Pill-Shaped Gradient Buttons */
         .order-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            background: #2563eb;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 40px;
+            padding: 12px 40px;
             font-size: 0.95rem;
             font-weight: 600;
             border-radius: 50px;
             width: 100%;
-            max-width: 220px;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-            transition: all 0.3s ease;
+            max-width: 200px;
+            transition: all 0.2s ease;
         }
 
         .order-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-            transform: scale(1.02);
+            background: #1d4ed8;
         }
 
-        /* Elegant Minimal Footer */
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
             font-size: 0.85rem;
             color: #94a3b8;
-            border-top: 1px solid rgba(234, 234, 234, 0.6);
+            border-top: 1px solid #eaeaea;
             background: #ffffff;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -236,10 +219,7 @@
             <p class="tagline">Premium RO Purified Drinking Water custom-tailored for homes, offices, and on-the-go pure living.</p>
         </div>
 
-        <!-- Modern Grid -->
         <div class="card-grid">
-            
-            <!-- Product 1 -->
             <div class="product-card">
                 <div class="icon-wrapper">💧</div>
                 <h3>19 Litre Bottle</h3>
@@ -247,7 +227,6 @@
                 <a href="contact.html" class="order-btn">Order Now</a>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-card">
                 <div class="icon-wrapper">🥛</div>
                 <h3>1.5 Litre Bottle</h3>
@@ -255,14 +234,12 @@
                 <a href="contact.html" class="order-btn">Order Now</a>
             </div>
 
-            <!-- Product 3 -->
             <div class="product-card">
-                <div class="icon-wrapper">📦</div>
+                <div class="icon-wrapper"> 📦</div>
                 <h3>500 ml Bottle</h3>
                 <p>Your on-the-go companion. Perfectly optimized for commuting, active events, and business meetings.</p>
                 <a href="contact.html" class="order-btn">Order Now</a>
             </div>
-
         </div>
     </main>
 
