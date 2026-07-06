@@ -4,85 +4,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - ZEST Pure Sip</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-[#F4F9FD] text-slate-800 antialiased">
+    <style>
+        /* Modern Reset & Variable Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-blue-50/50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex flex-col">
-                <span class="text-2xl font-extrabold tracking-wider text-[#0B2545] leading-none">ZEST</span>
-                <span class="text-[10px] tracking-[0.2em] font-bold text-[#134074]">PURE SIP</span>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-[#1D4ED8] transition">Home</a>
-                <a href="about.html" class="hover:text-[#1D4ED8] transition">About Us</a>
-                <a href="products.html" class="text-[#1D4ED8] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-0.5 after:bg-[#1D4ED8]">Our Products</a>
-                <a href="why-zest.html" class="hover:text-[#1D4ED8] transition">Why ZEST</a>
-                <a href="sustainability.html" class="hover:text-[#1D4ED8] transition">Sustainability</a>
-                <a href="contact.html" class="hover:text-[#1D4ED8] transition">Contact Us</a>
-            </nav>
-            <div class="flex items-center space-x-6 text-slate-700">
-                <div class="hidden sm:flex items-center space-x-1 text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1D4ED8]"></i>
-                    <span>Islamabad</span>
-                </div>
-            </div>
+        body {
+            background: linear-gradient(135deg, #f9fcff 0%, #f2f7fc 100%);
+            color: #2d3748;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Clean, Modern Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(234, 234, 234, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo .brand-main {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #0d2c54;
+            letter-spacing: 1px;
+        }
+
+        .logo .brand-sub {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #8a8a8e;
+            letter-spacing: 2.5px;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding-bottom: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        nav a.active {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            font-weight: 600;
+        }
+
+        /* Hero Header Custom Styling */
+        main {
+            padding: 80px 6% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .sub-heading {
+            color: #3b82f6; 
+            font-weight: 700; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: #0d2c54; 
+            font-size: 2.8rem;
+            font-weight: 800; 
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Modern Grid Card Container */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        /* Premium Floating Card Design */
+        .product-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(240, 244, 248, 0.8);
+            box-shadow: 0 10px 40px rgba(13, 44, 84, 0.03);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(13, 44, 84, 0.08);
+        }
+
+        /* Modern Rounded Tinted Icon Box */
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: #f0f7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            font-size: 2rem;
+            color: #2563eb;
+            transition: background 0.3s ease;
+        }
+
+        .product-card:hover .icon-wrapper {
+            background: #e0f0ff;
+        }
+
+        .product-card h3 {
+            color: #0d2c54;
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .product-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+
+        /* Modernized Pill-Shaped Gradient Buttons */
+        .order-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 40px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            width: 100%;
+            max-width: 220px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* Elegant Minimal Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(234, 234, 234, 0.6);
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="brand-main">ZEST</span>
+            <span class="brand-sub">PURE SIP</span>
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html" class="active">Our Products</a>
+            <a href="why-zest.html">Why ZEST</a>
+            <a href="sustainability.html">Sustainability</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
-    <!-- PRODUCTS GRID CONTENT -->
-    <section class="max-w-7xl mx-auto px-6 py-20">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-xs font-extrabold tracking-widest text-[#1D4ED8] uppercase block mb-2">Our Lineup</span>
-            <h1 class="text-4xl font-extrabold text-[#0B2545] mb-4">Hydration for Every Lifestyle</h1>
-            <p class="text-slate-600 leading-relaxed">Premium RO Purified Drinking Water custom-tailored for homes, offices, and on-the-go pure living.</p>
+    <main>
+        <div class="hero-section">
+            <span class="sub-heading">Our Lineup</span>
+            <h1>Hydration for Every Lifestyle</h1>
+            <p class="tagline">Premium RO Purified Drinking Water custom-tailored for homes, offices, and on-the-go pure living.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Modern Grid -->
+        <div class="card-grid">
+            
             <!-- Product 1 -->
-            <div class="bg-white rounded-2xl shadow-xl shadow-blue-900/5 border border-slate-100 p-8 flex flex-col items-center text-center">
-                <div class="p-4 bg-blue-50 rounded-full text-[#1D4ED8] mb-6">
-                    <i data-lucide="droplet" class="w-10 h-10"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-[#0B2545] mb-3">19 Litre Bottle</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">The ideal choice for corporate environments, busy offices, and family standard dispensers.</p>
-                <a href="contact.html" class="w-full bg-[#1D4ED8] text-white text-center font-semibold py-3 rounded-xl hover:bg-[#1e40af] transition mt-auto">Order Now</a>
+            <div class="product-card">
+                <div class="icon-wrapper">💧</div>
+                <h3>19 Litre Bottle</h3>
+                <p>The ideal choice for corporate environments, busy offices, and family standard dispensers.</p>
+                <a href="contact.html" class="order-btn">Order Now</a>
             </div>
 
             <!-- Product 2 -->
-            <div class="bg-white rounded-2xl shadow-xl shadow-blue-900/5 border border-slate-100 p-8 flex flex-col items-center text-center">
-                <div class="p-4 bg-blue-50 rounded-full text-[#1D4ED8] mb-6">
-                    <i data-lucide="glass-water" class="w-10 h-10"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-[#0B2545] mb-3">1.5 Litre Bottle</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">Perfect for home storage, active workout routines, dining table setups, and keeping your desk hydrated.</p>
-                <a href="contact.html" class="w-full bg-[#1D4ED8] text-white text-center font-semibold py-3 rounded-xl hover:bg-[#1e40af] transition mt-auto">Order Now</a>
+            <div class="product-card">
+                <div class="icon-wrapper">🥛</div>
+                <h3>1.5 Litre Bottle</h3>
+                <p>Perfect for home storage, active workout routines, dining table setups, and keeping your desk hydrated.</p>
+                <a href="contact.html" class="order-btn">Order Now</a>
             </div>
 
             <!-- Product 3 -->
-            <div class="bg-white rounded-2xl shadow-xl shadow-blue-900/5 border border-slate-100 p-8 flex flex-col items-center text-center">
-                <div class="p-4 bg-blue-50 rounded-full text-[#1D4ED8] mb-6">
-                    <i data-lucide="package" class="w-10 h-10"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-[#0B2545] mb-3">500 ml Bottle</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">Your on-the-go companion. Perfectly optimized for commuting, active events, and business meetings.</p>
-                <a href="contact.html" class="w-full bg-[#1D4ED8] text-white text-center font-semibold py-3 rounded-xl hover:bg-[#1e40af] transition mt-auto">Order Now</a>
+            <div class="product-card">
+                <div class="icon-wrapper">📦</div>
+                <h3>500 ml Bottle</h3>
+                <p>Your on-the-go companion. Perfectly optimized for commuting, active events, and business meetings.</p>
+                <a href="contact.html" class="order-btn">Order Now</a>
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER FROM YOUR LAYOUT -->
-    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-            <p>© 2026 ZEST Pure Sip. All Rights Reserved.</p>
         </div>
+    </main>
+
+    <footer>
+        © 2026 ZEST Pure Sip. All Rights Reserved.
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
